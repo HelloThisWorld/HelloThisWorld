@@ -1,14 +1,5 @@
 # Hello, world 👋
 
-**Senior Software Engineer — AI agent infrastructure, verification-first systems, context engineering, MCP tool integration, and production-grade software reliability.**
-
-I build the layer between AI agents and real codebases: systems that give agents **verifiable context** instead of confident guesses, and harnesses that **measure** whether agent skills actually work before they ship.
-
-> A fluent but unsupported answer about a production system is not intelligence — it is a production risk.
-> My work treats evidence, determinism, and honest refusal as engineering requirements, not aspirations.
-
----
-
 ## The Open Mind ecosystem
 
 Three open-source projects that form one pipeline: **generate trusted context → expose it to agents → verify agent behavior.**
@@ -75,10 +66,5 @@ Each project runs standalone; they integrate only through narrow, versioned cont
 - **Determinism before generation** — the same input produces the same output; models refine, they don't decide.
 - **Contracts over coupling** — projects integrate through versioned schemas, so each side can evolve and be tested alone.
 - **Measured, not asserted** — reliability claims come with eval numbers, seeded-fault proofs, and replayable artifacts.
-
-## Stack
-
-`Python` · `TypeScript` · `Node.js` · `FastAPI` · `MCP (Model Context Protocol)` · `LLM tooling & evals` · `static analysis` · `CI/CD & release gates`
-
 
 *All three projects are MIT-licensed. Issues and PRs welcome.*
