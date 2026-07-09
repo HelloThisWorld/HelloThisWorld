@@ -11,8 +11,7 @@ Source Code Repository
    Open Mind ────────────────  verification-first analysis (Python, standalone)
         │
         ▼
- .openmind artifacts ────────  versioned contract (manifest.json + schema 1.0.0,
-        │                      every entry carries file:line evidence)
+ .openmind artifacts ────────  versioned contract (manifest.json + schema 1.0.0, every entry carries file:line evidence)
         ▼
  open-mind-mcp-server ───────  MCP integration layer (TypeScript, standalone)
         │
@@ -20,8 +19,10 @@ Source Code Repository
  Claude / Cursor / AI agents   structured JSON tools: cited answers, honest refusals
         │
         ▼
- agent-skill-verification-template
-                               evals · citation validators · replay artifacts · release gate
+ agent-skill-verification-template evals · citation validators · replay artifacts · release gate
+        │
+        ▼
+ agent-skill-forge ───────────  spec-driven skill generation / packaging pipeline
 ```
 
 Each project runs standalone; they integrate only through narrow, versioned contracts. No monorepo, no hidden coupling.
