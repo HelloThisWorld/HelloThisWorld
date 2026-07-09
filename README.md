@@ -1,53 +1,125 @@
 # Hello, world 👋
 
-## The Open Mind ecosystem
+## Spec-driven AI agent engineering
 
-Three open-source projects that form one pipeline: **generate trusted context → expose it to agents → verify agent behavior.**
+I build open-source tools for production-grade AI agent workflows:  
+**generate trusted context → expose it as tools → verify agent behavior → package reliable skills.**
 
-```
+The focus is not prompt-and-pray demos.  
+The focus is **source-grounded context, MCP tool integration, evals, replayable failures, and verification-gated agent skills.**
+
+```text
 Source Code Repository
         │
         ▼
-   Open Mind ────────────────  verification-first analysis (Python, standalone)
+   Open Mind ───────────────────── verification-first codebase analysis
+        │                           Python · standalone
+        ▼
+ .openmind artifacts ───────────── versioned schema contract
+        │                           manifest.json · file:line evidence
+        ▼
+ open-mind-mcp-server ──────────── MCP tool integration layer
+        │                           TypeScript · standalone
+        ▼
+ Claude / Cursor / AI agents ──── structured tools, cited answers, honest refusals
         │
         ▼
- .openmind artifacts ────────  versioned contract (manifest.json + schema 1.0.0, every entry carries file:line evidence)
-        │
+ agent-skill-verification-template
+        │                           evals · validators · replay artifacts · quality gates
         ▼
- open-mind-mcp-server ───────  MCP integration layer (TypeScript, standalone)
-        │
-        ▼
- Claude / Cursor / AI agents   structured JSON tools: cited answers, honest refusals
-        │
-        ▼
- agent-skill-verification-template evals · citation validators · replay artifacts · release gate
-        │
-        ▼
- agent-skill-forge ───────────  spec-driven skill generation / packaging pipeline
+ agent-skill-forge ─────────────── spec-driven skill generation and packaging pipeline
 ```
 
-Each project runs standalone; they integrate only through narrow, versioned contracts. No monorepo, no hidden coupling.
+Each project runs standalone. They integrate through narrow, versioned contracts — no monorepo, no hidden coupling.
 
-### 🧠 [open-mind](https://github.com/HelloThisWorld/open-mind)
+---
 
-**The verification-first codebase context layer.** Turns any local repository into deterministic, source-traceable knowledge that agents can query — without trusting a model's memory.
+## Projects
+
+### 🧠 [Open Mind](https://github.com/HelloThisWorld/open-mind)
+
+**Verification-first codebase context for AI agents.**
+
+Open Mind turns local repositories into deterministic, source-traceable knowledge artifacts with `file:line` evidence.  
+It is designed for agents that need to understand codebases without relying on model memory or unsupported summaries.
+
+**Core ideas:** source grounding, deterministic extraction, codebase context engineering, honest refusal when evidence is missing.
+
+---
 
 ### 🔌 [open-mind-mcp-server](https://github.com/HelloThisWorld/open-mind-mcp-server)
 
-**The agent tool integration layer.** Loads Open Mind's artifacts and exposes them to any MCP-compatible client (Claude Code, Claude Desktop, Cursor) as five structured tools.
+**MCP tools for source-grounded codebase understanding.**
 
+This server loads `.openmind` artifacts and exposes them to MCP-compatible clients such as Claude Code, Claude Desktop, and Cursor.
+
+It provides structured tools for:
+
+- searching codebase context
+- retrieving symbol evidence
+- explaining architecture components
+- validating claims against source references
+- listing available artifacts
+
+**Core ideas:** MCP integration, tool contracts, structured JSON outputs, agent-callable evidence.
+
+---
 
 ### ✅ [agent-skill-verification-template](https://github.com/HelloThisWorld/agent-skill-verification-template)
 
-**The quality gate for agent skills.** Treats agent skills as production components: a model-independent contract, an offline eval harness, and observability for every run.
+**A quality gate for AI agent skills.**
+
+This project treats agent skills as production components.  
+It provides an offline eval harness, validators, replay artifacts, metrics, static reports, and release gates.
+
+**Core ideas:** evals, golden cases, negative cases, citation validation, replayable failures, model-independent skill contracts.
+
+---
+
+### ⚒️ [agent-skill-forge](https://github.com/HelloThisWorld/agent-skill-forge)
+
+**A spec-driven pipeline for generating, testing, repairing, and packaging AI agent skills.**
+
+agent-skill-forge turns a structured skill requirement into a verified skill package:
+
+```text
+skill requirement
+  → skill spec
+  → generated skill files
+  → eval cases
+  → verification
+  → repair loop
+  → quality gate
+  → installable package
+```
+
+**Core ideas:** agent skill generation, skill SDLC, verification-gated packaging, model-agnostic skill development.
 
 ---
 
 ## What I care about
 
-- **Evidence over fluency** — important answers point back to real `file:line` sources or say "not found".
-- **Determinism before generation** — the same input produces the same output; models refine, they don't decide.
-- **Contracts over coupling** — projects integrate through versioned schemas, so each side can evolve and be tested alone.
-- **Measured, not asserted** — reliability claims come with eval numbers, seeded-fault proofs, and replayable artifacts.
+- **Evidence over fluency**  
+  Important answers should point back to real sources or clearly say that evidence is missing.
 
-*All three projects are MIT-licensed. Issues and PRs welcome.*
+- **Specs before generation**  
+  AI is an execution accelerator, not the source of truth. Requirements, contracts, tests, and quality gates come first.
+
+- **Contracts over coupling**  
+  Tools and agents should integrate through explicit schemas, not hidden assumptions.
+
+- **Measured, not asserted**  
+  Reliability should be demonstrated through evals, reports, replay artifacts, and failure analysis.
+
+- **Production-minded AI**  
+  Agent workflows need observability, permission boundaries, partial failure handling, and release gates.
+
+---
+
+## Keywords
+
+`AI agents` · `MCP` · `Claude skills` · `agent skills` · `LLM evals` · `tool calling` · `context engineering` · `verification-first systems` · `source-grounded AI` · `production AI workflows`
+
+---
+
+MIT-licensed. Issues and PRs welcome.
