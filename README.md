@@ -12,6 +12,7 @@ Source Code Repository
         │
         ▼
  .openmind artifacts ────────  versioned contract (manifest.json + schema 1.0.0, every entry carries file:line evidence)
+        │
         ▼
  open-mind-mcp-server ───────  MCP integration layer (TypeScript, standalone)
         │
